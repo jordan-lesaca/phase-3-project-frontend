@@ -1,8 +1,7 @@
 import Painting from './Painting'
 
-function Paintings({paintings}){
-    console.log(paintings)
-    const allPaintings = paintings.map((p) => <Painting painting={p}/>)
+function Paintings({paintings, deletePainting, updatePainting}){
+    const allPaintings = paintings.map((p) => <Painting painting={p} key={p.id} deletePainting={deletePainting} updatePainting={updatePainting}/>)
     return (
         <div>
             <h1>Paintings</h1>
@@ -12,5 +11,3 @@ function Paintings({paintings}){
 }
 
 export default Paintings
-
-//Iterates Paintings and renders painting card for each one of these paintings component
