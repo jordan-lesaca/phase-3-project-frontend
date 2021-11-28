@@ -32,7 +32,7 @@ function App() {
     fetch("http://localhost:9292/paintings")
     .then((r) => r.json())
     .then((data) => setPaintings(data));
-      }, [])
+      }, []) 
 
   return (
     <div className="App">
@@ -44,13 +44,3 @@ function App() {
 }
 
 export default App;
-
-// function updatePainting(updatedPainting){
-//   const revisedPainting = paintings.map((painting) => {
-//     if (painting.id !== updatedPainting.id)
-//       return painting
-//         else 
-//       return updatedPainting
-//   })
-//   setPaintings(revisedPainting)
-// }
