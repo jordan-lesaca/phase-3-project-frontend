@@ -1,7 +1,9 @@
-import Painting from './Painting'
+import React from 'react'
+import PaintingCard from './PaintingCard'
 
-function Paintings({paintings, deletePainting}){
-    const allPaintings = paintings.map((p) => <Painting painting={p} key={p.id} deletePainting={deletePainting}/>)
+function Paintings({paintings, deletePainting, handleUpdate}){
+    const allPaintings = paintings.map((painting, index) => 
+    <PaintingCard key={index} painting={painting} deletePainting={deletePainting} handleUpdate={handleUpdate}/>)
     return (
         <div>
             <h1>Paintings</h1>
@@ -9,4 +11,5 @@ function Paintings({paintings, deletePainting}){
         </div>
     )
 }
+
 export default Paintings
