@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function UpdateFormCard({painting, updatePaint }){
     const [ toggle, setToggle ] = useState(false)
-    const [formData, setFormData ] = useState({
+    const [ formData, setFormData ] = useState({
         title: "",
         year_created: "",
         artist_id: ""
@@ -19,7 +19,7 @@ function UpdateFormCard({painting, updatePaint }){
         setFormData({...formData, [key] : value })
     }
 
-      function handleUp(e){
+    function handleUp(e){
         e.preventDefault()
         const updatedPaint = {
             title: formData.title, 
@@ -41,13 +41,12 @@ function UpdateFormCard({painting, updatePaint }){
             <h2>{painting.title}</h2>
             <h2>{painting.year_created}</h2>
             <h2>{painting.artist_id}</h2>
-            <button key={painting} onClick={toggling} >
-            Press me to Update
-            </button>
-
-            {toggle ? 
+                <button key={painting} onClick={toggling} >
+                Press me to Update
+                </button>
+                    {toggle ? 
                     <form className="update-painting" onSubmit={(handleUp)} >
-                        <label> Painting Title: </label>
+                        <label>Painting Title:</label>
                             <input 
                             type="text" 
                             name="title" 
@@ -56,8 +55,8 @@ function UpdateFormCard({painting, updatePaint }){
                             className="input-text"
                             onChange={handleChange}
                             />
-                 
-                        <label> Year Created: </label>
+
+                        <label>Year Created:</label>
                             <input type="text" 
                             name="year_created" 
                             placeholder="YYYY..." 
@@ -66,7 +65,7 @@ function UpdateFormCard({painting, updatePaint }){
                             onChange={handleChange}
                             /> 
                                 
-                        <label> Artist ID: </label>
+                        <label>Artist ID:</label>
                             <input type="text" 
                             name="artist_id" 
                             placeholder="Artist ID..." 
@@ -74,16 +73,11 @@ function UpdateFormCard({painting, updatePaint }){
                             className="input-text"
                             onChange={handleChange} 
                             />
-
-                <button type="submit" className="update-painting"> Update </button>
-                </form>
-
-                :
-
+                            <button type="submit" className="update-painting"> Update </button>
+                    </form>
+                            :
                             (null)
-
-                }
-
+                        }
         </div>
     )
 }

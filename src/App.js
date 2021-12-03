@@ -8,7 +8,11 @@ function App() {
   const [ paintings, setPaintings ] = useState([]) 
 
   function newPainting(title, year_created, artist_id){
-    const painting = {title: title, year_created: year_created, artist_id: artist_id }
+    const painting = {
+      title: title, 
+      year_created: year_created, 
+      artist_id: artist_id 
+    }
 
     fetch(`http://localhost:9292/paintings`, {
       method: 'POST', 

@@ -7,7 +7,7 @@ function PaintingCard({painting, deletePainting}){
             <h1>Title: {painting.title}</h1>
             <h3>Year Created: {painting.year_created}</h3>
             <h4>Artist ID: {painting.artist_id}</h4>
-            <button className="delete-button" onClick={() => deletePainting(painting.id)}> Delete </button>
+                <button className="delete-button" onClick={() => deletePainting(painting.id)}> Delete </button>
         </div>
     )
 }

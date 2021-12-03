@@ -1,9 +1,15 @@
 import React from 'react'
 import UpdateFormCard from './UpdateFormCard'
+import { useState } from 'react'
 
 function UpdateForm({paintings, updatePaint}){
-    const allPaint = paintings.map((painting, index) => 
+    const [ toggle, setToggle ] = useState(false)
 
+    function toggling(){
+        setToggle(!toggle) 
+    }
+
+    const allPaint = paintings.map((painting, index) => 
     <UpdateFormCard 
         key={index}
         painting={painting} 
@@ -12,8 +18,15 @@ function UpdateForm({paintings, updatePaint}){
 
         return (
             <div>
-                <h1>Update HERE</h1>
-                {allPaint}
+            <h2> Update Painting Form </h2>
+                <button onClick={toggling} >
+                    Make Update
+                </button>
+                    {toggle ? 
+                        (allPaint) 
+                        :
+                        (null)
+                    }
             </div>
         )
     }
