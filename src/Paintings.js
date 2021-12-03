@@ -9,5 +9,4 @@ function Paintings({paintings, deletePainting}){
         </div>
     )
 }
-
 export default Paintings

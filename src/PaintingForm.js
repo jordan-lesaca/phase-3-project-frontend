@@ -16,6 +16,7 @@ function PaintingForm({newPainting}){
     return (
         <div>
             <h2>Paintings Form </h2>
+            <h2> Current Studnts/IDs = Jianyu - 1, Persephone - 2, Zara - 3, Lionel - 4, Sterling - 5 </h2>
                 <form onSubmit={(e) => handleSubmit(e, title, year_created, artist_id)}>
                     <label> Painting Title: </label>
                     <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
