@@ -2,33 +2,46 @@ import React, { useState } from 'react'
 
 function PaintingForm({newPainting}){
     const [title, setTitle] = useState("")
-    const [year_created, set_year_created] = useState("")   
-    const [artist_id, set_artist_id] = useState("")
-
+    const [year_created, setYearCreated] = useState("")   
+    const [artist_id, setArtistId] = useState("")
+    
     function handleSubmit(e, title, year_created, artist_id){
-        e.preventDefault()  
+        e.preventDefault()
         newPainting(title, year_created, artist_id)
         setTitle("")
-        set_year_created("")
-        set_artist_id("")
+        setYearCreated("")
+        setArtistId("")
       }
 
     return (
         <div>
-            <h2>Paintings Form </h2>
-            <h2> Current Studnts/IDs = Jianyu - 1, Persephone - 2, Zara - 3, Lionel - 4, Sterling - 5 </h2>
-                <form onSubmit={(e) => handleSubmit(e, title, year_created, artist_id)}>
-                    <label> Painting Title: </label>
-                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
-                    <br/>
-                    <label>Year Created:</label>
-                    <input type="text" name="year_created" value={year_created} onChange={e => set_year_created(e.target.value)}/>
-                    <br/>
-                    <label>ArtistID:</label>
-                    <input type="text" name="artist_id" value={artist_id} onChange={e => set_artist_id(e.target.value)}/>
-                    <br/>
-                    <button type="submit">Add Painting</button>                 
-                </form>
+            <h1>Painting Form</h1>
+            <form className="add-painting" onSubmit={(e) => handleSubmit(e, title, year_created, artist_id)} >
+                <label> Painting Title: </label>
+                <input type="text" 
+                name="title" 
+                placeholder="title..." 
+                value={title}
+                className="input-text"
+                onChange={e => setTitle(e.target.value)} />
+                
+                <label> Year Created: </label>
+                <input type="text" 
+                name="year_created" 
+                placeholder="YYYY..." 
+                value={year_created}
+                className="input-text"
+                onChange={e => setYearCreated(e.target.value)} /> 
+                               
+                <label> Artist ID: </label>
+                <input type="text" 
+                name="artist_id" 
+                placeholder="Artist ID..." 
+                value={artist_id}
+                className="input-text"
+                onChange={e => setArtistId(e.target.value)} />
+            <button type="submit" className="new-painting" > Add </button>
+            </form>
         </div>
     )
 }
