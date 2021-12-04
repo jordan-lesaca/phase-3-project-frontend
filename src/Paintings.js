@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PaintingCard from './PaintingCard'
 
+
 function Paintings({paintings, deletePainting, handleUpdate}){
     const [ toggle, setToggle ] = useState(false)
     const allPaintings = paintings.map((painting, index) => 

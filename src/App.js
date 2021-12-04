@@ -1,11 +1,13 @@
 import './App.css';
 import Paintings from './Paintings'
 import PaintingForm from'./PaintingForm'
+import Artists from './Artists'
 import UpdateForm from './UpdateForm'
 import React, { useEffect, useState } from 'react'
 
 function App() {
   const [ paintings, setPaintings ] = useState([]) 
+  const [ artists, setArtists ] = useState([])
 
   function newPainting(title, year_created, artist_id){
     const painting = {
@@ -26,6 +28,8 @@ function App() {
       setPaintings(paintings.concat(newPainting))
     )
   }
+
+  
   
   function deletePainting(id){
     fetch(`http://localhost:9292/paintings/${id}`,{
@@ -44,6 +48,12 @@ function App() {
     .then((data) => setPaintings(data));
   }, []) 
 
+  useEffect(() => {   
+    fetch("http://localhost:9292/artists")
+    .then((r) => r.json())
+    .then((data) => setArtists(data));
+  }, []) 
+
   function updatePaint(updatedPaint){
     const revisedPaint = paintings.map((painting) => {
       if (painting.id !== updatedPaint.id)
@@ -57,6 +67,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to the Gallery</h1>
+        <Artists artists={artists}/>
         <Paintings paintings={paintings} deletePainting={deletePainting}/>
         <PaintingForm newPainting={newPainting}/>
         <UpdateForm paintings={paintings} updatePaint={updatePaint}/>

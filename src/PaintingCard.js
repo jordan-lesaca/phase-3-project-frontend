@@ -1,7 +1,6 @@
 import React from 'react'
 
 function PaintingCard({painting, deletePainting}){
-
     return (
         <div>
             <h1>Title: {painting.title}</h1>
