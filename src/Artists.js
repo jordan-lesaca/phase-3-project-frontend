@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ArtistCard from './ArtistCard'
 
-
 function Artists({artists}){
     const [ toggle, setToggle ] = useState(false)
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import PaintingCard from './PaintingCard'
 
-
 function Paintings({paintings, deletePainting, handleUpdate}){
     const [ toggle, setToggle ] = useState(false)
     const allPaintings = paintings.map((painting, index) => 
@@ -22,11 +21,12 @@ function Paintings({paintings, deletePainting, handleUpdate}){
                     Press to show all paintings
                 </button>
         {toggle ? 
-            (allPaintings)
+            (<h1>{allPaintings}</h1>
+    )
                 : 
             (null)
         }
-        </div>
+              </div>
     )
 }
 
