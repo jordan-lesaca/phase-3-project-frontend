@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Setup:
+Run these to install dependencies and set up the database:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For the backend: 
 
-## Available Scripts
+bundle install ~ to install the Sinatra gem from the Gemfile. 
+bundle exec rake server ~ to start the server.
+rake db:seed ~ to load the data from db/seeds.rb.
 
-In the project directory, you can run:
+For the frontend:
+	
+	npm install ~ this command installs a package and it’s dependencies. A .json file is downloaded and a node_modules folder should install. 
+	npm start ~ this script is used to execute the defined file in it without typing its execution command. 
 
-### `npm start`
+Further Instructions:
+	Open a browser and load: http://localhost:3000/
+	Or if wanting to see the backend, load: http://localhost:9292/paintings 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In this app, the user is able to:
+	- Click one of four buttons on the home page. 
+	- Upon clicking the “Show All Artists” button, the user will see a list of all the current student artists, along with their ID and Art Style. 
+	- If the button is to be clicked again, the list disappears. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+	- Upon clicking the “Show All Paintings” button, the user will see a list of all paintings, along with their titles, year created, the artist ID number, and a delete button. 
+	- If the instructor or artists wish to remove the listing from their portfolio, they can click the delete button and it is removed from the list. 
+	- If the button is to be clicked again, the list disappears. 
 
-### `npm test`
+	- Upon clicking the “Show Add Form”, the user will see a form with three input fields to fill in and an add button. 
+	- If “add button” is clicked, the information from the form will be appended to the list of paintings. 
+	- If the “Show Add Form” button is clicked again the list disappears. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+	- Upon clicking “Update List”, the user will see a list of the paintings with a button that reads “Press to Update”
+    - If “Press to Update” is clicked, a form with three input fields will be shown to the user, along with an update button. 
+    - If “update” button is clicked, the information from the fields will be submitted and the painting will be updated with inputted information. 
+    - If "Update List" is clicked again, the list will disappear. 
 
-### `npm run build`
+In this app, the developer is able to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+	run: rake console 
+	
+	With this command, the developer is able to interact with the database, using Active Record, by performing queries via the terminal. 

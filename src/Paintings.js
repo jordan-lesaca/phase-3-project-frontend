@@ -18,7 +18,7 @@ function Paintings({paintings, deletePainting, handleUpdate}){
         <div>
             <h1>Paintings</h1>
                 <button onClick={toggling} >
-                    Press to show all paintings
+                    Show All Paintings
                 </button>
         {toggle ? 
             (<h1>{allPaintings}</h1>

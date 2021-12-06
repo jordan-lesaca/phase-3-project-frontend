@@ -20,9 +20,9 @@ function PaintingForm({newPainting}){
 
     return (
         <div>
-            <h1>Painting Form</h1>
+            <h1>Add Painting Form</h1>
                 <button onClick={toggling} >
-                Show Update Form
+                Show Add Form
                 </button>
                     {toggle ?
                         <form className="add-painting" onSubmit={(e) => handleSubmit(e, title, year_created, artist_id)} >

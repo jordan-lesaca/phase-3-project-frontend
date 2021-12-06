@@ -19,7 +19,7 @@ function Artists({artists}){
         <div>
             <h1>Current Student Artist Info</h1>
                 <button onClick={toggling} >
-                    Press to show all artists
+                    Show Artists
                 </button>
         {toggle ? 
             (allArtists)

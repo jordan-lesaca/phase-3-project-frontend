@@ -20,7 +20,7 @@ function UpdateForm({paintings, updatePaint}){
             <div>
             <h2> Update Painting Form </h2>
                 <button onClick={toggling} >
-                    Make Update
+                    Update List
                 </button>
                     {toggle ? 
                         (allPaint) 

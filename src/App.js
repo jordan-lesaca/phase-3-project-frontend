@@ -43,13 +43,13 @@ function App() {
   }
 
   useEffect(() => {   
-    fetch("http://localhost:9292/paintings")
+    fetch(`http://localhost:9292/paintings`)
     .then((r) => r.json())
     .then((data) => setPaintings(data));
   }, []) 
 
   useEffect(() => {   
-    fetch("http://localhost:9292/artists")
+    fetch(`http://localhost:9292/artists`)
     .then((r) => r.json())
     .then((data) => setArtists(data));
   }, []) 
